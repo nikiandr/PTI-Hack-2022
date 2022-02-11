@@ -13,7 +13,7 @@ The same code in .py script and additional files to run within Doker container
 ```
 cd PTI-Hack-2022/docker
 docker build -t pti_hack .
-docker tag pti_hack_zod_tv:latest <your_username>/pti_hack:latest
+docker tag pti_hack:latest <your_username>/pti_hack:latest
 docker push <your_username>/pti_hack
 ```
 
