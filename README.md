@@ -3,6 +3,7 @@ Track №3 task solution by Team Garch
 
 ## Notebooks
 - `pti_hack.ipynb` - Main notebook used for creating the final stacking model
+
 Because of exhaustive pointwise time-respecting predictions for stacking - the notebook takes approximately 1 hour to run on 16 CPUs.
 
 ## Docker
