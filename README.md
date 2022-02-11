@@ -1,13 +1,13 @@
 # PTI Hack 2022
-Track №3 task solution by Team Garch
+Track №3 task solution by Team GARCH
 
 ## Notebooks
 - `pti_hack.ipynb` - Main notebook used for creating the final stacking model
 
-Because of exhaustive pointwise time-respecting predictions for stacking - the notebook takes approximately 1 hour to run on 16 CPUs.
+Because of exhaustive pointwise time-respecting predictions for stacking - the notebook takes approximately 1 hour to run on 16 CPUs / n_jobs=32.
 
 ## Docker
-The same code in .py script and additional files to run within Doker container
+The same code in .py script and additional files to run within the Docker container
 
 ### Build
 ```
@@ -21,7 +21,7 @@ docker push <your_username>/pti_hack
 ```
 KAGGLE_USERNAME - username in Kaggle
 KAGGLE_TOKEN - Kaggle API token
-N_JOBS - number of jobs for paralel execution
+N_JOBS - number of jobs for parallel execution
 ```
 
 ### Running on zod.tv (sponsor platform)
@@ -44,4 +44,4 @@ The prediction will be submitted automatically after execution ends.
 ### Troubleshooting
 For some reasons container sometimes fails with the `joblib.externals.loky.process_executor.TerminatedWorkerError` when running on zod.tv
 
-Consider N_JOBS to be small enough to prevent this (but this can significantly slow down the learning speed).
+Consider `N_JOBS` to be small enough to prevent this (but this can significantly slow down the learning speed).
