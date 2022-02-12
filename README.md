@@ -1,6 +1,11 @@
 # PTI Hack 2022
 Track №3 task solution by Team GARCH
 
+## Task
+Competition could be found by this link: https://www.kaggle.com/c/pti-hack 
+The task was to predict the very next probability of successful deal closing, having the history of interactions with clients.
+
+
 ## Notebooks
 - `pti_hack.ipynb` - Main notebook used for creating the final stacking model
 
