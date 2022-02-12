@@ -2,7 +2,7 @@
 Track №3 task solution by Team GARCH
 
 ## Task
-Competition could be found by this link: https://www.kaggle.com/c/pti-hack 
+Competition could be found by this link: https://www.kaggle.com/c/pti-hack <br />
 The task was to predict the very next probability of successful deal closing, having the history of interactions with clients.
 
 
