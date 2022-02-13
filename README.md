@@ -1,5 +1,5 @@
 # PTI Hack 2022
-Track №3 task solution by Team GARCH with RMSE 20.12592
+Track №3 task solution by Team GARCH with **RMSE 20.12592**
 
 ## Task
 Competition could be found by this link: https://www.kaggle.com/c/pti-hack <br />
