@@ -16,15 +16,14 @@ Reasons for using this method:
  * Avoid overfitting at the intersection of train and test
  * Avoid occuring leaks during the generation of new features: preventing situation where the past flows into the future
 
-##  Feature Generation
+##  Feature Engineering
 1) Dates: `CreatedDate`, `CreatedDateForInsert`, `ValidThroughDate` - differences, quarters, years, sin-cos encoding
 2) Lags: Stats of previous probabilities grouped by `Opportunity`, `CreatedBy` and periods
 3) Categorical: `CreatedById`, `AccountId`, `RecordTypeId`, `Type`, `LeadSource`, `CampaignId` etc.
 4) CountVectorizer: `Needs__c` - dividing into more features.
 
 ## Approach Details
-
- * Divide the target by 100 and build the LightGBM model with the loss function. <br />
+ * Divide the target by 100 and build the LightGBM model with the logloss objective. <br />
  * Build a classifier model (target - `StageName` - forecast of how the deal will end at the very end: 0 - unsuccessfully, 1 - successfully). <br />
  * For each point in the dataset, predict the value <br />
  * Divide the dataset into 2 parts: successful and unsuccessful cases.   <br />
@@ -32,7 +31,7 @@ Reasons for using this method:
  * Stacking of CatBoost and LightGBM models (with coefficients 0.4 and 0.6, respectively) in each of the categories.<br />
 
 ## Notebooks
-- `pti_hack.ipynb` - Main notebook used for creating the final stacking model
+- [`pti_hack.ipynb`](https://github.com/nikiandr/PTI-Hack-2022/blob/main/notebooks/pti_hack.ipynb) ([nbviewer](https://nbviewer.org/github/nikiandr/PTI-Hack-2022/blob/main/notebooks/pti_hack.ipynb)) - Main notebook used for creating the final stacking model
 
 Because of exhaustive pointwise time-respecting predictions for stacking - the notebook takes approximately 1 hour to run on 16 CPUs / n_jobs=32.
 
