@@ -10,7 +10,7 @@ The task was to predict the probability of successful deal closing, having the h
 ## Solution
 
 Our solution approach consists of building a Classifier, then using LightGBM and CatBoost separately for successful and unsuccessful cases and stacking them. Since the train and test data had a non-zero intersection, we had to define a correct time-aware prediction scheme (so that we could predict the target for each new element based only on past data). 
-Markup : ![picture alt](https://imgur.com/a/2CdmSGn "prediction scheme")
+Markup : ![picture alt](https://imgur.com/a/2CdmSGn/to/img.png "prediction scheme")
 <br />
 Reasons for using this method:
  * Avoid overfitting at the intersection of train and test
