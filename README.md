@@ -24,7 +24,8 @@ Reasons for using this method:
 <br />
 
 ## Final Model
- Markup :  * Divide the target by 100 and build the LightGBM model with the loss function. <br />
+ Markup :  
+ * Divide the target by 100 and build the LightGBM model with the loss function. <br />
  * Build a classifier model (target - "StageName" - forecast of how the deal will end at the very end: 0 - unsuccessfully, 1 - successfully). <br />
  * For each point in the dataset, predict the value <br />
  * Divide the dataset into 2 parts: successful and unsuccessful cases.   <br />
