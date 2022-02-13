@@ -6,10 +6,11 @@ Competition could be found by this link: https://www.kaggle.com/c/pti-hack <br /
 <br />
 The task was to predict the probability of successful deal closing, having the history of interactions with clients.
 <br />
+  - - - -
 ## Solution
 
 Our solution approach consists of building a Classifier, then using LightGBM and CatBoost separately for successful and unsuccessful cases and stacking them. Since the train and test data had a non-zero intersection, we had to define a correct time-aware prediction scheme (so that we could predict the target for each new element based only on past data). 
-![correct time-aware prediction scheme](https://imgur.com/a/2CdmSGn)
+Markup : ![picture alt](https://imgur.com/a/2CdmSGn "prediction scheme")
 <br />
 Reasons for using this method:
  * Avoid overfitting at the intersection of train and test
@@ -23,8 +24,8 @@ Reasons for using this method:
 4) Dividing feature "Needs__c" using CountVectorizer.
 <br />
 
-## Final Model
- Markup :  
+## Approach Steps
+
  * Divide the target by 100 and build the LightGBM model with the loss function. <br />
  * Build a classifier model (target - "StageName" - forecast of how the deal will end at the very end: 0 - unsuccessfully, 1 - successfully). <br />
  * For each point in the dataset, predict the value <br />
@@ -32,7 +33,7 @@ Reasons for using this method:
  * On each of the parts, build a separate LGBMRegressor and CatBoost to predict the final value of the probability.<br />
  * Stacking of CatBoost and LightGBM models (with coefficients 0.4 and 0.6, respectively) in each of the categories.<br />
 <br />
-
+  - - - -
 
 ## Notebooks
 - `pti_hack.ipynb` - Main notebook used for creating the final stacking model
