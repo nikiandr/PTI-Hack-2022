@@ -22,12 +22,12 @@ Reasons for using this method:
 3) Categorical: 'CreatedById', 'AccountId', 'RecordTypeId', 'Type', 'LeadSource', 'CampaignId' etc.
 4) Dividing feature "Needs__c" using CountVectorizer.
 <br />
-Log-loss Classifier
-  * Divide the target by 100 and build the LightGBM model with the loss function. 
-  * Build a classifier model (target - "StageName" - forecast of how the deal will end at the very end: 0 - unsuccessfully, 1 - successfully). For each point in the dataset, predict the value 
-  * Divide the dataset into 2 parts: successful and unsuccessful cases. 
-  * On each of the parts, build a separate LGBMRegressor and CatBoost to predict the final value of the probability.
-  * Stacking of CatBoost and LightGBM models (with coefficients 0.4 and 0.6, respectively) in each of the categories.
+Log-loss Classifier:<br />
+ * Divide the target by 100 and build the LightGBM model with the loss function. 
+ * Build a classifier model (target - "StageName" - forecast of how the deal will end at the very end: 0 - unsuccessfully, 1 - successfully). For each point in the dataset, predict the value 
+ * Divide the dataset into 2 parts: successful and unsuccessful cases.   
+ * On each of the parts, build a separate LGBMRegressor and CatBoost to predict the final value of the probability.
+ * Stacking of CatBoost and LightGBM models (with coefficients 0.4 and 0.6, respectively) in each of the categories.
 <br />
 
 
